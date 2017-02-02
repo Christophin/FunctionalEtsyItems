@@ -20,3 +20,10 @@ items.forEach(function(object) {
     }
 });
 
+question3 = document.getElementById("answer3");
+
+items.forEach(function(object)  {
+   if (object.currency_code === "GBP")  {
+       question3.innerHTML += object.title + " " + "costs" + " " + "&pound" + object.price;
+   }
+});
