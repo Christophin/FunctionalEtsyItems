@@ -38,3 +38,17 @@ items.forEach(function(object)  {
 
 question5 = document.getElementById("answer5");
 
+items.forEach(function(object)  {
+    var muchoMade;
+    if (object.materials.length > 7)    {
+        for (var j = 0; j < object.materials.length; j++) {
+            muchoMade += "<p>" + object.materials[j] + "</p>"
+        }
+        question5.innerHTML += object.title + " " + "has" + " " + object.materials.length + " " + "materials:" + muchoMade;
+        muchoMade = "";
+    }
+});
+
+question6 = document.getElementById("answer6");
+
+
