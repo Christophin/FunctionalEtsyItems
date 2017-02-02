@@ -27,3 +27,14 @@ items.forEach(function(object)  {
        question3.innerHTML += object.title + " " + "costs" + " " + "&pound" + object.price;
    }
 });
+
+question4 = document.getElementById("answer4");
+
+items.forEach(function(object)  {
+    if (object.materials.includes("wood"))   {
+        question4.innerHTML += "<p>" + object.title + " " + "is made of wood." + "</p>"
+    }
+});
+
+question5 = document.getElementById("answer5");
+
