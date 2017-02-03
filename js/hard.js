@@ -51,4 +51,12 @@ items.forEach(function(object)  {
 
 question6 = document.getElementById("answer6");
 
+var homeItems = [];
+
+items.forEach(function(object)  {
+    if (object.who_made === "i_did")    {
+        homeItems.push(object);
+    }
+    question6.innerHTML = homeItems.length + " " + "were made by their sellers";
+});
 
