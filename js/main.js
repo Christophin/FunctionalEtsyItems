@@ -45,7 +45,7 @@ var woodenStuff = function (array)  {
     for (var i = 0; i < array.length; i++)  {
         for (var j = 0; j < array[i].materials.length; j++)  {
             if (array[i].materials[j] === "wood")    {
-                question4.innerHTML += "<p>" + array[i].title + " " + "is made of wood." + "</p>"
+                question4.innerHTML += "<p>" + array[i].title + " " + "is made of wood." + "</p>";
             }
         }
     }
@@ -60,7 +60,7 @@ var madeOfMucho = function (array)  {
     for (var i = 0; i < array.length; i++)  {
         if (array[i].materials.length > 7)  {
             for (var j = 0; j < array[i].materials.length; j++) {
-                muchoMade += "<p>" + array[i].materials[j] + "</p>"
+                muchoMade += "<p>" + array[i].materials[j] + "</p>";
             }
             question5.innerHTML += array[i].title + " " + "has" + " " + array[i].materials.length + " " + "materials:" + muchoMade;
             muchoMade = "";

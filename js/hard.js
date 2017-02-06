@@ -3,22 +3,20 @@
 question1 = document.getElementById("answer1");
 
 var avgPrice = [];
+function forEacher(object)  {avgPrice.push(object.price)}
+function reducer(a, b)  { return a + b; };
 
-items.forEach(function (object) {
-    avgPrice.push(object.price);
-});
-
-avgPrice = avgPrice.reduce(function (a, b) { return a + b; });
+items.forEach(forEacher);
+avgPrice = avgPrice.reduce(reducer);
 question1.innerHTML = "The average price is" + " " + "$" + (avgPrice / items.length).toFixed(2);
 
 
 question2 = document.getElementById("answer2");
 
-items.forEach(function(object) {
-    if (object.price < 18 && object.price > 14) {
-        question2.innerHTML += "<p>" + object.title + "</p>";
-    }
-});
+function filtered(obj) {return obj.price <18 && obj.price > 14};
+function forEacher2(obj) {return question2.innerHTML += "<p>" + obj.title + "</p>"};
+
+items.filter(filtered).forEach(forEacher2);
 
 question3 = document.getElementById("answer3");
 
@@ -32,7 +30,7 @@ question4 = document.getElementById("answer4");
 
 items.forEach(function(object)  {
     if (object.materials.includes("wood"))   {
-        question4.innerHTML += "<p>" + object.title + " " + "is made of wood." + "</p>"
+        question4.innerHTML += "<p>" + object.title + " " + "is made of wood." + "</p>";
     }
 });
 
@@ -42,7 +40,7 @@ items.forEach(function(object)  {
     var muchoMade;
     if (object.materials.length > 7)    {
         for (var j = 0; j < object.materials.length; j++) {
-            muchoMade += "<p>" + object.materials[j] + "</p>"
+            muchoMade += "<p>" + object.materials[j] + "</p>";
         }
         question5.innerHTML += object.title + " " + "has" + " " + object.materials.length + " " + "materials:" + muchoMade;
         muchoMade = "";
@@ -59,4 +57,3 @@ items.forEach(function(object)  {
     }
     question6.innerHTML = homeItems.length + " " + "were made by their sellers";
 });
-
